@@ -5,38 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  {% load staticfiles %}
+  <link href="{% static 'login/style.css' %}" rel="stylesheet">
 </head>
 <body>
-  {% if messages %}
-    {% for message in messages %}
-    <p>{{ message }}</p>
-    {% endfor %}
-  {% endif %}
-  <h2>Login</h2>
-  <form action="/login" method="POST">
-      {% csrf_token %}
-      <label for="username">Username</label>
-      <input type="text" name="username"><br>
-      <label for="password">Password</label>
-      <input type="password" name="password"><br>
-      <input type="submit" value='Login'>
-  </form>
+  <header>
+      <h1>GTP - The One Stop Group Travel Planner</h1>
+  </header>
+    <p id ='txt'>Welcome to the Group Travel Planner. It is used to find friends to travel the world with. You can use this app to connect with people, plan your own trips, or join theirs. Whether it is meeting new people in Italy, or planning a guys-only trip to an island, it can all be planned here. Please Register or Sign In.</p>
+  <div class="message">
+    {% if messages %}
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  </div>
+  <div id="middle">
+    <div class="login">
+    <h2>Login</h2>
+      <form action="/login" method="POST">
+          {% csrf_token %}
+          <table>
+            <tr>
+              <td><label for="username">Username</label></td>
+              <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password</label></td>
+              <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+              <td><input type="submit" value='Login'></td>
+            </tr>
+          </table>
+      </form>
+    </div>
 
-  <h2>Register</h2>
-  <form action="/register" method="POST">
-      {% csrf_token %}
-
-      <label for="first_name">First Name</label>
-      <input type="text" name="first_name"><br>
-      <label for="last_name">Last Name</label>
-      <input type="text" name="last_name"><br>
-      <label for="username">Username</label>
-      <input type="text" name="username"><br>
-      <label for="password">Password</label>
-      <input type="password" name="password"><br>
-      <label for="password_confirm">Confirm Password</label>
-      <input type="password" name="password_confirm"><br>
-      <input type="submit" value='Register'>
-  </form>
+    <div class="register">
+      <h2>Register</h2>
+      <form action="/register" method="POST">
+          {% csrf_token %}
+          <table>
+            <tr>
+              <td><label for="first_name">First Name</label></td>
+              <td><input type="text" name="first_name"></td>
+            </tr>
+            <tr>
+              <td><label for="last_name">Last Name</label></td>
+              <td><input type="text" name="last_name"></td>
+            </tr>
+            <tr>
+              <td><label for="username">Username</label></td>
+              <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password</label></td>
+              <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+              <td><label for="password_confirm">Confirm Password</label></td>
+              <td><input type="password" name="password_confirm"></td>
+            </tr>
+            <tr>
+              <td><input type="submit" value='Register'></td>
+            </tr>
+          </table>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

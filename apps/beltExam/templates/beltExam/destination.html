@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Destination</title>
+  {% load staticfiles %}
+  <link href="{% static 'beltExam/trip-style.css' %}" rel="stylesheet">
 </head>
 <body>
-<a href="{% url 'travels:index' %}"><button type="button">Home</button></a>
-<a href="{% url 'login:logout' %}"><button type="button">Logout</button></a>
-<h1>{{ plan.destination }}</h1>
+<header>
+  <h1>GTP for {{ plan.destination }}</h1>
+  <a href="{% url 'travels:index' %}">Home</a>
+  <a href="{% url 'login:logout' %}">Logout</a>
+</header>
+
 <p>Planned By: {{ plan.creator.first_name }}</p>
 <p>Description: {{ plan.description }}</p>
 <p>Travel Date From: {{ plan.startdate|date:'M d Y' }}</p>
 <p>Travel Date To: {{ plan.enddate|date:'M d Y' }}</p>
 <h2>Other users joining the trip:</h2>
+
+
 <ul>
   {% for joiner in others %}
     <li>{{ joiner.first_name }}</li>

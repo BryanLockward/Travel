@@ -14,7 +14,7 @@ def register(request):
         for err in new_user:
             messages.error(request, err)
         return redirect('/')
-    messages.success(request, "Successfully registered!, Now Please Login")
+    messages.success(request, "Successfully registered! Now Please Login")
     return redirect('/')
 
 def login(request):
@@ -24,7 +24,6 @@ def login(request):
             messages.error(request, err)
         return redirect('/')
     request.session['id'] = user.id
-    messages.success(request, "Successfully logged in!")
     return redirect(reverse("beltExam:index"))
 
 def logout(request):

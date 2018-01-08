@@ -1,0 +1,48 @@
+body{
+  background-color:#B8FAF7;
+}
+header{
+  margin: -10px;
+  width:100%;
+  display: inline-block;
+  background: linear-gradient(to right,#5E86B0,#93C1F2);
+  padding:20px;
+  padding-top:0px;
+  padding-left:40px;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px #CFD9DE;
+  color: white;
+  text-shadow: 1px 1px black;
+  font-family: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
+}
+#txt{
+  margin:0 auto;
+  text-align: center;
+  width:80%;
+  font-size: 26px;
+}
+#middle{
+  width:62%;
+  margin:0 auto;
+  align-items: center;
+}
+.message{
+  color:red;
+  margin:0 auto;
+  width:100%;
+  text-align: center;
+}
+.login, .register{
+  margin-left: 20px;
+  margin-top:20px;
+  display:inline-block;
+  height:50vh;
+  width:300px;
+  padding:10px;
+  vertical-align: top;
+  background-color: white;
+  padding:10px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 1px 1px lightgrey;
+}

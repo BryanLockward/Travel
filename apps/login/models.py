@@ -34,7 +34,7 @@ class UserManager(models.Manager):
         if len(User.objects.filter(username=formdata['username'])) > 0:
             errors.append("Username already in use")
         if formdata['password'] != formdata['password_confirm']:
-            errors.append("passwords do not match")
+            errors.append("Passwords do not match")
         if not errors:
             hashed = bcrypt.hashpw((formdata['password'].encode()), bcrypt.gensalt(5))
 
